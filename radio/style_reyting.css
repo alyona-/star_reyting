@@ -1,0 +1,37 @@
+
+.rating{
+    width: 100px;
+    margin: 40px auto 0;
+}
+
+input{
+    display: none; /* прячем блок с input*/
+}
+
+label{
+    background: url("img/star.png") no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-left: 1px;
+    cursor: url("img/cursor.png"), pointer;
+    -moz-transition: all .4s;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+    float: right; /* при отображении порядок станет верным*/
+}
+
+/* при наведении на label:
+1) подсвечивается сам элемент
+2) все предыдущие лейблы также подсвечиваются
+
+При нажатии на label(становится активным один из radio элементов, ассоциированных с label)
+1) подсвечивается выбранный элемент (checked)
+2) и все предыдущие перед выбранным
+ */
+
+label:hover,
+label:hover~label,
+input:checked~label{
+    background: url("img/star2.png") no-repeat;
+}
