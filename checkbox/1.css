@@ -1,0 +1,47 @@
+body {
+    background: cornflowerblue;
+}
+
+#inp {
+   display: none;
+}
+
+/*Правила для каждой звезды по отдельности*/
+label {
+  display: block;
+  width:18px;
+  height: 16px;
+  float: left;
+}
+#cl {
+    top: 100px;
+    margin: 0 auto;
+    display: block;
+    background: url("img/star_pas.png")left center;
+    width: 90px;
+    height: 16px;
+}
+
+.reiting_result {
+    color: red;
+}
+#clean {
+    clear: both;
+}
+#text_block {
+    display: table;
+    border:1px solid #000;
+    width:150px;
+    height:50px;
+    margin: 0 auto;
+
+    border-radius: 100px;
+    background: linear-gradient(to top, #FFFFFF, #FFFFD7);
+}
+#text {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: red;
+    font-size: 90%;
+}
