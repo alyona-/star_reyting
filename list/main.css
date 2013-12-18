@@ -1,0 +1,88 @@
+dl.star-rating ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 90px;
+    height: 16px;
+    position: relative;
+    background: url("img/star2.png");
+}
+
+/*Теперь мы выстраиваем все элементы в линию*/
+dl.star-rating li {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+/*Теперь пришло время для ссылок, мы делаем их блочными элементами
+(чтобы задать ширину и высоту звездочек), прячем текст text-indent:-9999px;
+а также указывает абсолютное позиционирование и z-index (потом станет ясно
+зачем)*/
+dl.star-rating li a {
+    display: block;
+    width: 18px;
+    height: 16px;
+    text-indent: -9999px;
+    position: absolute;
+    text-decoration: none;
+    z-index: 10;
+}
+
+/*Теперь мы указываем правило реакции на курсор, при его наведении, наша ссылка заполняется
+рисунком звездочками (второе состояние из-за указания center), а также отодвигается в влево,
+(к самому краю самого рейтинга). Делается это все для того, чтобы активная ссылка (т.е.
+в состоянии hover)заполняла собой больше чем положенный ей по умолчанию 20 пикселей*/
+dl.star-rating li a:hover {
+    background: url("img/star1.png")left center;
+    left: 0;
+    z-index: 2;
+}
+
+/*Теперь, чтобы все заработало, нам нужно добавить следующие правила для каждого
+элемента списка*/
+dl.star-rating a.star1 {
+    left: 0;
+}
+
+dl.star-rating a.star1:hover {
+    width: 18px;
+}
+dl.star-rating a.star2 {
+    left:18px;
+}
+dl.star-rating a.star2:hover {
+    width:36px;
+}
+dl.star-rating a.star3 {
+    left:36px;
+}
+dl.star-rating a.star3:hover {
+    width: 54px;
+}
+dl.star-rating a.star4 {
+    left: 54px;
+}
+dl.star-rating a.star4:hover {
+    width: 72px;
+}
+dl.star-rating a.star5 {
+    left: 72px;
+}
+
+dl.star-rating a.star5:hover {
+    width:90px;
+}
+
+
+/*Теперь работаем с проставленным рейтингом*/
+dl.star-rating li.current {
+    background: url('img/star3.png') left bottom;
+    height: 16px;
+    z-index: 1;
+}
+
+/*Отображение надписей при смене рейтинга*/
+dl.star-rating ol>li a:hover {
+    text-indent: 110px;
+}
